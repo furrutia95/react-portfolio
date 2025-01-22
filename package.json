@@ -16,5 +16,11 @@
   "bugs": {
     "url": "https://github.com/furrutia95/react-portfolio/issues"
   },
-  "homepage": "https://github.com/furrutia95/react-portfolio#readme"
+  "homepage": "https://github.com/furrutia95/react-portfolio#readme",
+  "devDependencies": {
+    "standard": "^17.1.2"
+  },
+  "eslintConfig": {
+    "extends": "./node_modules/standard/eslintrc.json"
+  }
 }
