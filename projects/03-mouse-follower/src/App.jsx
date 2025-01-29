@@ -5,6 +5,7 @@ function App() {
   const [enabled, setEnabled] = useState(false)
   const [position, setPosition] = useState({ x: 0, y:0})
 
+  // pointer move
   useEffect(() => {
     const handleMove = (event) => {
       const { clientX, clientY } = event
@@ -24,6 +25,15 @@ function App() {
     //cuando cambian las dependencias, antes de ejecutar el efecto de nuevo.
     return () => {
       window.removeEventListener('pointermove', handleMove) //Se desuscribe al pointermove
+    }
+  }, [enabled])
+
+  // change body className
+  useEffect(() => {
+    document.body.classList.toggle('no-cursor', enabled)
+
+    return () => {
+      document.body.classList.remove('no-cursor')
     }
   }, [enabled])
 
